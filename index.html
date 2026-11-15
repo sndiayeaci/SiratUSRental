@@ -1,68 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SiratUS Rental</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiratUS Rental | Car Rentals in Trussville, AL</title>
+<style>
+:root{--bg:#fbf8f3;--surface:#fff;--ink:#16202b;--muted:#5b6672;--brand:#c8102e;--brand-ink:#fff;--accent:#0f3b5f;--line:#e7dfd2;--hero:#0f3b5f;--hero-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e141b;--surface:#16202b;--ink:#eef2f6;--muted:#9aa6b2;--brand:#ff4560;--brand-ink:#16050a;--accent:#7fc0f0;--line:#263340;--hero:#0a2438;--hero-ink:#fff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e141b;--surface:#16202b;--ink:#eef2f6;--muted:#9aa6b2;--brand:#ff4560;--brand-ink:#16050a;--accent:#7fc0f0;--line:#263340;--hero:#0a2438;--hero-ink:#fff;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--brand)}
+nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--brand)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.hero{background:var(--hero);color:var(--hero-ink);padding:72px 0 80px}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.03em;max-width:15em}
+.hero p{max-width:34em;font-size:1.1rem;opacity:.92;margin:0 0 28px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.badge{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font-size:.85rem}
+section{padding:64px 0}
+h2{font-size:clamp(1.5rem,4vw,2.1rem);margin:0 0 8px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0 0 32px;max-width:40em}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:0 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.car .price{font-size:1.8rem;font-weight:800;color:var(--brand);margin:8px 0}
+.car .price small{font-size:.9rem;color:var(--muted);font-weight:500}
+.specs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px;padding:0;list-style:none}
+.specs li{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:.82rem}
+.car .btn{padding:9px 18px;font-size:.92rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:18px}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.icon{font-size:1.6rem;margin-bottom:8px}
+.stars{color:#e8a200;letter-spacing:2px}
+.contact{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.contact dl{margin:0}.contact dt{font-weight:700;margin-top:14px}.contact dd{margin:2px 0 0;color:var(--muted)}
+.contact .big{font-size:1.8rem;font-weight:800;text-decoration:none;color:var(--brand)}
+footer{padding:28px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+@media(max-width:640px){nav a.h{display:none}.hero{padding:48px 0 56px}section{padding:44px 0}}
+</style>
 </head>
-
 <body>
+<header><div class="wrap nav">
+<a class="logo" href="#top">Sirat<span>US</span> Rental</a>
+<nav><a class="h" href="#cars">Vehicles</a><a class="h" href="#why">Why us</a><a class="h" href="#reviews">Reviews</a><a class="h" href="#contact">Contact</a><a class="btn" href="tel:+12052618427" style="color:var(--brand-ink);margin-left:12px;padding:8px 16px">Call now</a></nav>
+</div></header>
 
-<header>
-  <h1>SiratUS Rental</h1>
-  <nav>
-    <a href="#cars">Cars</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<h1>Clean, reliable car rentals in Trussville, Alabama.</h1>
+<p>Locally owned and top-rated. Choose from fuel-efficient hybrids and roomy family SUVs, with short-term and long-term rentals, plus airport pickup and drop-off.</p>
+<div class="cta"><a class="btn" href="#cars">See vehicles</a><a class="btn ghost" href="tel:+12052618427">(205) 261-8427</a></div>
+<div class="badges"><span class="badge">★ 5.0 All-Star Host on Turo</span><span class="badge">195+ trips completed</span><span class="badge">Hosting since 2022</span></div>
+</div></div>
 
-<section class="hero">
-  <h2>Luxury & Reliable Car Rentals</h2>
-  <p>Book your ride today. Fast. Easy. Affordable.</p>
-  <a href="#cars" class="btn">View Cars</a>
-</section>
+<section id="cars"><div class="wrap">
+<h2>Our vehicles</h2>
+<p class="sub">A sample of what’s on the lot. Fleet and availability change, so call or check Turo for what’s open on your dates.</p>
+<div class="grid">
+<article class="card car">
+<h3>2026 Toyota Corolla Hybrid LE</h3><p>Great for commuting, errands and road trips on a budget.</p>
+<div class="price">$105 <small>/ day on Turo</small></div>
+<ul class="specs"><li>5 seats</li><li>46 MPG</li><li>Automatic</li><li>600 mi included</li></ul>
+<a class="btn" href="https://turo.com/us/en/car-rental/united-states/trussville-al/toyota/corolla-hybrid/3506342" target="_blank" rel="noopener">Book on Turo</a>
+</article>
+<article class="card car">
+<h3>2025 Toyota Grand Highlander LE</h3><p>Room for the whole crew and all the luggage.</p>
+<div class="price">$114 <small>/ day on Turo</small></div>
+<ul class="specs"><li>8 seats</li><li>24 MPG</li><li>Automatic</li><li>Add drivers free</li></ul>
+<a class="btn" href="https://turo.com/us/en/suv-rental/united-states/trussville-al/toyota/grand-highlander/3141897" target="_blank" rel="noopener">Book on Turo</a>
+</article>
+<article class="card car">
+<h3>2017 Toyota Camry</h3><p>A comfortable, dependable sedan for everyday driving.</p>
+<div class="price" style="font-size:1.2rem">Call for rates</div>
+<ul class="specs"><li>Sedan</li><li>Automatic</li><li>Short &amp; long term</li></ul>
+<a class="btn" href="tel:+12052618427">Call (205) 261-8427</a>
+</article>
+</div>
+<p class="note">Rates shown are Turo listing prices before taxes and fees and may change. Renters must be 21+. Turo trips include 600 miles per trip, then $0.52 per extra mile.</p>
+</div></section>
 
-<section id="cars" class="cars">
-  <h2>Our Fleet</h2>
+<section id="why" class="alt"><div class="wrap">
+<h2>Why rent with SiratUS</h2>
+<p class="sub">Simple, flexible and local.</p>
+<div class="grid">
+<div class="card"><div class="icon">✈️</div><h3>Airport pickup &amp; drop-off</h3><p>We can meet you at the airport, or bring the vehicle to popular areas during daytime hours.</p></div>
+<div class="card"><div class="icon">💳</div><h3>Easy payment</h3><p>Book through Turo, or rent with us directly using a debit card and other popular payment methods.</p></div>
+<div class="card"><div class="icon">📅</div><h3>Short or long term</h3><p>One day, a week or a few months. We’ll work with your schedule.</p></div>
+<div class="card"><div class="icon">⛽</div><h3>Fuel-smart fleet</h3><p>Hybrids that sip gas, so your trip costs less at the pump.</p></div>
+</div></div></section>
 
-  <div class="car">
-    <h3>Toyota Camry</h3>
-    <p>$75/day</p>
-    <button onclick="bookCar('Toyota Camry')">Book Now</button>
-  </div>
+<section id="reviews"><div class="wrap">
+<h2>What renters say</h2>
+<p class="sub">Feedback from guests on Turo, where we hold a perfect 5.0 rating.</p>
+<div class="grid">
+<div class="card"><div class="stars">★★★★★</div><p>Guests describe the car as clean, reliable and great on gas, and call the whole experience a 10 out of 10.</p></div>
+<div class="card"><div class="stars">★★★★★</div><p>Renters praise the communication and say they plan to rent again.</p></div>
+<div class="card"><div class="stars">★★★★★</div><p>Described as affordable and well maintained, a car guests would happily book again.</p></div>
+</div></div></section>
 
-  <div class="car">
-    <h3>BMW 5 Series</h3>
-    <p>$150/day</p>
-    <button onclick="bookCar('BMW 5 Series')">Book Now</button>
-  </div>
+<section id="contact" class="alt"><div class="wrap">
+<h2>Get in touch</h2>
+<p class="sub">Questions, quotes or a long-term rental? Call or text and we’ll get you on the road.</p>
+<div class="contact">
+<div><a class="big" href="tel:+12052618427">(205) 261-8427</a>
+<p style="margin:12px 0 18px;color:var(--muted)">Call or text anytime during business hours.</p>
+<a class="btn" href="sms:+12052618427">Send a text</a></div>
+<dl>
+<dt>Location</dt><dd>Trussville, AL 35173<br>Pickup at the car’s location, or ask about delivery.</dd>
+<dt>Hours</dt><dd>Typically 9 AM to 9 PM (per online listings). Call to confirm.</dd>
+<dt>Requirements</dt><dd>Renters must be 21 or older.</dd>
+</dl>
+</div></div></section>
+</main>
 
-  <div class="car">
-    <h3>Chevrolet Tahoe</h3>
-    <p>$180/day</p>
-    <button onclick="bookCar('Chevrolet Tahoe')">Book Now</button>
-  </div>
-
-</section>
-
-<section id="about">
-  <h2>About Us</h2>
-  <p>SiratUS Rental offers clean, reliable, and luxury vehicles with flexible pickup options including airport delivery.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: info@siratusrental.com</p>
-  <p>Phone: (123) 456-7890</p>
-</section>
-
-<footer>
-  <p>© 2026 SiratUS Rental</p>
-</footer>
-
-<script src="script.js"></script>
-
+<footer><div class="wrap">© 2026 SiratUS Rental · Trussville, Alabama · Vehicle availability and pricing subject to change.</div></footer>
 </body>
 </html>
